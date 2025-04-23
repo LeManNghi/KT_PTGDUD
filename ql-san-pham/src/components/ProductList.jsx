@@ -1,7 +1,7 @@
 import React from "react";
-import './ProductList.css'
+import "./ProductList.css";
 
-export default function ProductList({ products }) {
+export default function ProductList({ products, onDelete }) {
     return (
       <div>
         <h2>Danh sách sản phẩm</h2>
@@ -23,7 +23,7 @@ export default function ProductList({ products }) {
                 <td>{product.category}</td>
                 <td>{product.stock}</td>
                 <td>
-                  <button>Xoá</button>
+                  <button onClick={() => onDelete(product.id)}>Xoá</button>
                 </td>
               </tr>
             ))}
@@ -32,3 +32,4 @@ export default function ProductList({ products }) {
       </div>
     );
   }
+  
